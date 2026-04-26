@@ -43,13 +43,13 @@ export default function SandboxPage() {
         <div className="flex items-center gap-4">
           <Link href="/dashboard" className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"><ArrowLeft size={18} /> Back</Link>
           <div className="h-4 w-px bg-white/20"></div>
-          <div className="flex items-center gap-2 text-white font-bold text-xl"><Shield className="text-blue-500" /> ThreatSpire <span className="text-neutral-500 text-sm ml-2">/ Code Sandbox</span></div>
+          <div className="flex items-center gap-1 sm:gap-2 text-white font-bold text-lg sm:text-xl"><Shield className="text-blue-500" /> ThreatSpire <span className="text-neutral-500 text-sm ml-2">/ Code Sandbox</span></div>
         </div>
       </nav>
 
       <main className="w-full flex-1 relative mt-16">
-        <div className="flex flex-col md:flex-row h-[calc(100vh-64px)] w-full">
-          <div className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center">
+        <div className="flex flex-col lg:flex-row min-h-[calc(100vh-64px)] lg:h-[calc(100vh-64px)] w-full overflow-y-auto lg:overflow-hidden">
+          <div className="flex-1 p-4 sm:p-8 lg:p-12 relative z-10 flex flex-col justify-center min-h-[500px] lg:min-h-0 order-2 lg:order-1">
             <CyberPanel className="w-full max-w-2xl mx-auto shadow-[0_0_50px_rgba(37,99,235,0.1)]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20"><Terminal className="text-blue-400 w-8 h-8"/></div>
@@ -100,7 +100,7 @@ export default function SandboxPage() {
               </div>
             </CyberPanel>
           </div>
-          <div className="flex-1 relative h-full w-full pointer-events-auto bg-black/20"><SplineScene scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode" className="w-full h-full" /></div>
+          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-black/20 order-1 lg:order-2 border-b border-white/10 lg:border-none"><SplineScene scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode" className="w-full h-full" /></div>
         </div>
       </main>
     </div>

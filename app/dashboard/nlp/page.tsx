@@ -46,7 +46,7 @@ export default function NlpPage() {
             <ArrowLeft size={16} /> Back
           </Link>
           <div className="h-4 w-px bg-white/20" />
-          <div className="flex items-center gap-2 text-white font-bold text-lg">
+          <div className="flex items-center gap-1 sm:gap-2 text-white font-bold text-lg sm:text-xl">
             <Shield className="text-blue-500" /> ThreatSpire
             <span className="text-neutral-500 text-sm ml-1">/ NLP Forensics</span>
           </div>
@@ -54,10 +54,10 @@ export default function NlpPage() {
       </nav>
 
       <main className="w-full flex-1 relative mt-16">
-        <div className="flex flex-col md:flex-row h-[calc(100vh-64px)] w-full">
+        <div className="flex flex-col lg:flex-row min-h-[calc(100vh-64px)] lg:h-[calc(100vh-64px)] w-full overflow-y-auto lg:overflow-hidden">
 
           {/* ── Left — CyberPanel UI ── */}
-          <div className="flex-1 p-6 md:p-10 relative z-10 flex flex-col justify-center overflow-y-auto">
+          <div className="flex-1 p-4 sm:p-8 lg:p-12 relative z-10 flex flex-col justify-center min-h-[500px] lg:min-h-0 order-2 lg:order-1">
             <CyberPanel className="w-full max-w-2xl mx-auto shadow-[0_0_50px_rgba(37,99,235,0.08)]">
 
               {/* Header */}
@@ -170,7 +170,7 @@ export default function NlpPage() {
           </div>
 
           {/* ── Right — Spline 3D Scene ── */}
-          <div className="flex-1 relative h-full w-full pointer-events-auto hidden md:block bg-black/20">
+          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-black/20 order-1 lg:order-2 border-b border-white/10 lg:border-none">
             <SplineScene
               scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode"
               className="w-full h-full"

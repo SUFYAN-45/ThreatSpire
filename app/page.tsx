@@ -27,15 +27,15 @@ export default function LandingPage() {
 
       {/* Main Content — 21st.dev Exact Demo Layout */}
       <main className="flex-1 flex items-center justify-center p-4 md:p-8 mt-16">
-        <Card className="w-full max-w-6xl h-[500px] md:h-[600px] bg-black/[0.96] relative overflow-hidden border-white/10">
+        <Card className="w-full max-w-6xl bg-black/[0.96] relative overflow-hidden border-white/10">
           <Spotlight
             className="-top-40 left-0 md:left-60 md:-top-20"
             fill="white"
           />
 
-          <div className="flex flex-col md:flex-row h-full">
+          <div className="flex flex-col lg:flex-row min-h-screen w-full pt-20 lg:pt-0">
             {/* Left content */}
-            <div className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center">
+            <div className="w-full lg:w-1/2 p-6 sm:p-12 lg:p-24 flex flex-col justify-center z-10 order-2 lg:order-1">
               <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                 Next-Gen Cloud <br/> Forensics
               </h1>
@@ -53,7 +53,7 @@ export default function LandingPage() {
             </div>
 
             {/* Right content — NEW Spline scene kZDDjO5HuC9GJUM2 */}
-            <div className="flex-1 relative min-h-[300px]">
+            <div className="w-full h-[400px] lg:h-screen lg:w-1/2 relative z-0 order-1 lg:order-2 pointer-events-none lg:pointer-events-auto">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"
