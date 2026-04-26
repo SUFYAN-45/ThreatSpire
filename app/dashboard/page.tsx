@@ -17,7 +17,7 @@ export default function DashboardHub() {
         <div className="flex items-center gap-2 text-white font-bold text-xl">
           <Shield className="text-blue-500" /> ThreatSpire
         </div>
-        <UserButton afterSignOutUrl="/" />
+        <UserButton />
       </nav>
 
       {/* Module selector */}

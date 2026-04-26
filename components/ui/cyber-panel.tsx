@@ -4,19 +4,24 @@ import { cn } from "@/lib/utils";
 export function CyberPanel({ children, className }: { children: React.ReactNode, className?: string }) {
   return (
     <div className={cn(
-      "relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.8)] group transition-all duration-500 hover:border-white/20",
+      // Glass surface — rgba(5,5,18,0.72) matches the shader's dark navy bgColor1 at 72% opacity
+      "relative overflow-hidden rounded-2xl border border-white/10 backdrop-blur-2xl",
+      "bg-[rgba(5,5,20,0.72)]",
+      "shadow-[0_8px_48px_rgba(0,0,0,0.9),inset_0_0_0_1px_rgba(255,255,255,0.04)]",
+      "group transition-all duration-500 hover:border-indigo-500/30",
       className
     )}>
-      {/* Ambient Inner Glow (The Purple & Blue Gradients) */}
-      <div className="absolute -top-32 -right-32 w-72 h-72 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-72 h-72 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none" />
+      {/* Subtle inner corner glow — matches shader purple lineColor */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-600/8 via-transparent to-purple-700/8 pointer-events-none" />
 
-      {/* Animated gradient background on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-      
-      {/* Top highlight line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-50" />
-      
+      {/* Hover shimmer — brightens the panel glass on interact */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+      {/* Top edge highlight — the plasma warp line feel */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-400/60 to-transparent" />
+      {/* Left edge highlight */}
+      <div className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-indigo-400/30 via-transparent to-transparent" />
+
       {/* Content Container */}
       <div className="relative z-10 p-4 sm:p-8 h-full flex flex-col">
         {children}

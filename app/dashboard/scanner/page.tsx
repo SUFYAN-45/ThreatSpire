@@ -8,6 +8,7 @@ import {
   ArrowLeft, Radar, CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
+import ShaderBackground from "@/components/ui/shader-background";
 
 export default function ScannerPage() {
   const [targetUrl, setTargetUrl]     = useState("");
@@ -34,7 +35,10 @@ export default function ScannerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex flex-col font-sans">
+    <div className="min-h-screen bg-transparent flex flex-col font-sans relative">
+
+      {/* Animated WebGL plasma background */}
+      <ShaderBackground />
 
       {/* Navbar */}
       <nav className="w-full border-b border-white/10 p-4 md:px-8 flex justify-between items-center z-50 bg-black/50 backdrop-blur-md fixed top-0">

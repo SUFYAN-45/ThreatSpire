@@ -5,6 +5,7 @@ import { CyberPanel } from "@/components/ui/cyber-panel";
 import { Dropzone } from "@/components/ui/dropzone";
 import { Shield, ArrowLeft, Terminal, Loader2 } from "lucide-react";
 import Link from "next/link";
+import ShaderBackground from "@/components/ui/shader-background";
 
 export default function SandboxPage() {
   const [scriptContent, setScriptContent] = useState("");
@@ -38,7 +39,11 @@ export default function SandboxPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex flex-col font-sans">
+    <div className="min-h-screen bg-transparent flex flex-col font-sans relative">
+
+      {/* Animated WebGL plasma background */}
+      <ShaderBackground />
+
       <nav className="w-full border-b border-white/10 p-4 md:px-8 flex justify-between items-center z-50 bg-black/50 backdrop-blur-md fixed top-0">
         <div className="flex items-center gap-4">
           <Link href="/dashboard" className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"><ArrowLeft size={18} /> Back</Link>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CyberPanel } from "@/components/ui/cyber-panel";
 import { Dropzone } from "@/components/ui/dropzone";
 import { SplineScene } from "@/components/ui/spline-scene";
+import ShaderBackground from "@/components/ui/shader-background";
 
 const emailFlags = [
   { keyword: 'URGENT',     severity: 'danger',  desc: 'High-pressure urgency trigger'  },
@@ -34,7 +35,10 @@ export default function NlpPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex flex-col font-sans">
+    <div className="min-h-screen bg-transparent flex flex-col font-sans relative">
+
+      {/* Animated WebGL plasma background */}
+      <ShaderBackground />
 
       {/* Navbar */}
       <nav className="w-full border-b border-white/10 p-4 md:px-8 flex justify-between items-center z-50 bg-black/50 backdrop-blur-md fixed top-0">
