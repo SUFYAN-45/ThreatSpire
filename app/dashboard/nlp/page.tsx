@@ -4,7 +4,7 @@ import { Shield, ArrowLeft, Mail, Zap, AlertTriangle, CheckCircle } from "lucide
 import Link from "next/link";
 import { CyberPanel } from "@/components/ui/cyber-panel";
 import { Dropzone } from "@/components/ui/dropzone";
-import { SplineScene } from "@/components/ui/spline-scene";
+import Spline from '@splinetool/react-spline';
 import ShaderBackground from "@/components/ui/shader-background";
 
 const emailFlags = [
@@ -174,11 +174,8 @@ export default function NlpPage() {
           </div>
 
           {/* ── Right — Spline 3D Scene ── */}
-          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-black/20 order-1 lg:order-2 border-b border-white/10 lg:border-none">
-            <SplineScene
-              scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode"
-              className="w-full h-full"
-            />
+          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-transparent order-1 lg:order-2 border-b border-white/10 lg:border-none">
+            <Spline scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode" className="w-full h-full bg-transparent" />
           </div>
 
         </div>

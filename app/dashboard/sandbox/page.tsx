@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { SplineScene } from "@/components/ui/spline-scene";
+import Spline from '@splinetool/react-spline';
 import { CyberPanel } from "@/components/ui/cyber-panel";
 import { Dropzone } from "@/components/ui/dropzone";
 import { Shield, ArrowLeft, Terminal, Loader2 } from "lucide-react";
@@ -105,7 +105,9 @@ export default function SandboxPage() {
               </div>
             </CyberPanel>
           </div>
-          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-black/20 order-1 lg:order-2 border-b border-white/10 lg:border-none"><SplineScene scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode" className="w-full h-full" /></div>
+          <div className="w-full h-[350px] lg:h-full lg:flex-1 relative pointer-events-none lg:pointer-events-auto bg-transparent order-1 lg:order-2 border-b border-white/10 lg:border-none">
+            <Spline scene="https://prod.spline.design/ZSwGzzb-xRVdRXjP/scene.splinecode" className="w-full h-full bg-transparent" />
+          </div>
         </div>
       </main>
     </div>
